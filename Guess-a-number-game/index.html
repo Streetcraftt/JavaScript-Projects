@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Number</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=in_home_mode"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+  </head>
+  <body>
+    <div class="first-container">
+      <header class="top-part">
+        <button class="again-btn">Again!</button>
+        <p class="range">(Between 1 and 100)</p>
+        <h1 class="guess-number">Guess My Number</h1>
+        <p class="guess-sign">?</p>
+      </header>
+    </div>
+
+    <section>
+      <div class="second-container">
+        <div class="check-number">
+          <input type="number" class="input-number" num="1" max="20" />
+          <button class="btn-check hidden">Check!</button>
+        </div>
+
+        <div class="result">
+          <p class="result-output output-1">Start guessing...</p>
+          <p class="result-output output-2">
+            💯 Score: <span class="score">10</span>
+          </p>
+          <p class="result-output output-3">
+            🥇 High Score: <span class="highscore">0</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

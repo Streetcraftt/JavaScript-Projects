@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', system-ui;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #f7f7f7;
+}
+
+.first-container {
+  border-bottom: 4px solid #f7f7f7;
+  position: relative;
+  padding: 8px;
+}
+
+.guess-number {
+  text-align: center;
+  margin: 156px 0 120px 0;
+  font-size: 64px;
+}
+
+.again-btn {
+  background-color: #f7f7f7;
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 20px 32px;
+  color: #111;
+  font-size: 20px;
+}
+
+.range {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.guess-sign {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 15rem;
+  padding: 40px 0;
+  color: #111;
+  background-color: #f7f7f7;
+  text-align: center;
+  font-size: 60px;
+  /* research About this */
+  transform: translate(-50%, 50%);
+}
+
+.second-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 120px;
+  align-items: top;
+  /* background-color: yellow; */
+}
+
+.check-number {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  /* background-color: green; */
+}
+
+.input-number {
+  width: 200px;
+  height: 96px;
+  text-align: center;
+  font-size: 32px;
+  margin: 0 auto 20px auto;
+  border: 3px solid #f7f7f7;
+  background-color: transparent;
+  color: #f7f7f7;
+}
+
+button {
+  background-color: #f7f7f7;
+  padding: 16px 24px;
+  color: #111;
+  font-size: 20px;
+  margin: 0 auto;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  /* background-color: red; */
+}
+
+.result-output {
+  margin: 0 40px;
+  font-size: 20px;
+}
+
+.output-1 {
+  margin-bottom: 64px;
+}
+
+.output-2 {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
