@@ -6,24 +6,9 @@ const btnCheckHide = document.querySelector('.hidden');
 btnCheckHide.classList.remove('hidden');
 
 //Functions
-const currentStatus = function (status) {
-  document.querySelector('.output-1').textContent = status;
-};
 
-const playerScore = function (currentScore) {
-  document.querySelector('.score').textContent = currentScore;
-};
-
-const displayRandomNumber = function (randomNumber) {
-  document.querySelector('.guess-sign').textContent = randomNumber;
-};
-
-const displayMainText = function (mainText) {
-  document.querySelector('.guess-number').textContent = mainText;
-};
-
-const currentHighScore = function (highscore) {
-  document.querySelector('.highscore').textContent = highscore;
+const displayText = function (textDisplay, classElement) {
+  document.querySelector(classElement).textContent = textDisplay;
 };
 
 const inputGuess = function (input) {
@@ -41,23 +26,22 @@ document.querySelector('.btn-check').addEventListener('click', function () {
 
   //User didn't input anything
   if (!guessNumber) {
-    currentStatus('⛔ Please enter a number (1-100)!');
+    displayText('⛔ Please enter a number (1-100)!', '.output-1');
   }
 
   //Number is out of range
   else if (guessNumber < 1 || guessNumber > 100)
-    currentStatus('⛔ Out of range.Choose between 1 and 100!');
+    displayText('⛔ Out of range.Choose between 1 and 100!', '.output-1');
   //The Guess is Correct
   else if (guessNumber === randomNumber) {
     const score = Number(document.querySelector('.score').textContent);
     const highscore = Number(document.querySelector('.highscore').textContent);
-    currentStatus('🎉YAY, That is correct!');
+
+    displayText('🎉YAY, That is correct!', '.output-1');
     bgColor('body', '#60b347');
-    displayRandomNumber(randomNumber);
-    displayMainText('You Win 🎉🎉');
-    if (highscore < score) {
-      currentHighScore(score);
-    }
+    displayText(randomNumber, '.guess-sign');
+    displayText('You Win 🎉🎉', '.guess-number');
+    if (highscore < score) displayText(score, '.highscore');
     btnCheckHide.classList.add('hidden');
   }
 
@@ -65,15 +49,18 @@ document.querySelector('.btn-check').addEventListener('click', function () {
   else if (guessNumber !== randomNumber) {
     score--;
     if (score >= 1) {
-      currentStatus(guessNumber > randomNumber ? '📈 Too High!' : '📉Too Low!');
-      playerScore(score);
+      displayText(
+        guessNumber > randomNumber ? '📈 Too High!' : '📉Too Low!',
+        '.output-1',
+      );
+      displayText(score, '.score');
     } else {
-      currentStatus(`💥 Game Over! The Number was ${randomNumber}`);
-      playerScore(0);
-      currentHighScore(0);
+      displayText(`💥 Game Over! The Number was ${randomNumber}`, '.output-1');
+      displayText(0, '.score');
+      displayText(0, '.highscore');
       bgColor('body', '#df4949');
-      displayRandomNumber(randomNumber);
-      displayMainText('Game Over!!!');
+      displayText(randomNumber, '.guess-sign');
+      displayText('Game Over!!!', '.guess-number');
     }
   }
 });
@@ -82,17 +69,11 @@ document.querySelector('.btn-check').addEventListener('click', function () {
 document.querySelector('.again-btn').addEventListener('click', function () {
   score = 10;
   randomNumber = Math.trunc(Math.random() * 100 + 1);
-  currentStatus('Start Guessing...');
-  playerScore(score);
+  displayText('Start Guessing...', '.output-1');
+  displayText(score, '.score');
   inputGuess('');
   bgColor('body', '#111');
-  displayRandomNumber('?');
-  displayMainText('Guess My Number');
+  displayText('?', '.guess-sign');
+  displayText('Guess My Number', '.guess-number');
   btnCheckHide.classList.remove('hidden');
-
-  //*************to be commented out only for testing ****************/
-  // const inputNumber = Number(document.querySelector(".input-number").value);
-  // document.querySelector(".guess-sign").textContent = randomNumber;
-  // document.querySelector(".output-1").textContent = "📈 Too High!";
-  // console.log(randomNumber);
 });
