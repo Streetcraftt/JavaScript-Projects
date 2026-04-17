@@ -25,3 +25,5 @@ This project is designed to help understand how to work with CSS classes. Class 
 
 - Updated the background color to a linear gradient from purple to hot pink  
   - This change was made for visual preference rather than to demonstrate technical complexity
+ 
+[Link to the Course on Udemy](https://www.udemy.com/share/101Wfe3@H9BASNjOPrs4f0Hjr4UGY-GV3C--jG4KpJ-eGOGy-WLUKgweE2lg5T4hXJfh2cZh3w==/)
