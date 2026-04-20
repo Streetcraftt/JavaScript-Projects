@@ -1,6 +1,6 @@
 # Modal Window Project
 
-This is the second small project, focused on implementing a modal window.
+This is a mini project, just focused on implementing a modal window.
 
 ## Overview
 
